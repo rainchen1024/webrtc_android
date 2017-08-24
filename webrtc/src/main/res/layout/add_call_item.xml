@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/info_window_head_image"
+        android:layout_width="@dimen/base_et_height"
+        android:layout_height="@dimen/base_et_height"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_head_image"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/layout_call"
+        android:layout_toRightOf="@+id/info_window_head_image"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/info_window_name"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            tools:text="namenamenamename"/>
+
+
+        <TextView
+            android:id="@+id/user_role_txt"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"
+            tools:hint="role"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/info_window_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:drawableLeft="@drawable/info_window_distance"
+            android:drawablePadding="8dp"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="10dp"/>
+
+        <CheckBox
+            android:id="@+id/valid_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/darker_gray"/>
+</RelativeLayout>
+
+
