@@ -175,7 +175,7 @@ public class WebRtcClient {
     private class CreateAnswerCommand implements Command {
         public void execute(String peerId, JSONObject payload) throws JSONException {
             Peer peer = peers.get(peerId);
-            Log.d(TAG, "CreateAnswerCommand：" + pcConstraints + "，peerId：" + peerId + "，state:" + peer.pc.signalingState().toString());
+//            Log.d(TAG, "CreateAnswerCommand：" + pcConstraints + "，peerId：" + peerId + "，state:" + peer.pc.signalingState().toString());
             SessionDescription sdp = new SessionDescription(
                     SessionDescription.Type.fromCanonicalForm(payload.getString("type")),
                     payload.getString("sdp")
@@ -188,7 +188,7 @@ public class WebRtcClient {
     private class SetRemoteSDPCommand implements Command {
         public void execute(String peerId, JSONObject payload) throws JSONException {
             Peer peer = peers.get(peerId);
-            Log.d(TAG, "SetRemoteSDPCommand：" + "，peerId：" + peerId + "，state " + peer.pc.signalingState().toString());
+//            Log.d(TAG, "SetRemoteSDPCommand：" + "，peerId：" + peerId + "，state " + peer.pc.signalingState().toString());
             SessionDescription sdp = new SessionDescription(
                     SessionDescription.Type.fromCanonicalForm(payload.getString("type")),
                     payload.getString("sdp")
@@ -200,7 +200,7 @@ public class WebRtcClient {
     private class AddIceCandidateCommand implements Command {
         public void execute(String peerId, JSONObject payload) throws JSONException {
             Peer peer = peers.get(peerId);
-            Log.d(TAG, "AddIceCandidateCommand：" + "，peerId：" + peerId + "，SigalingState " + peer.pc.signalingState().toString());
+//            Log.d(TAG, "AddIceCandidateCommand：" + "，peerId：" + peerId + "，SigalingState " + peer.pc.signalingState().toString());
             if (peer.sdpReady) {
                 IceCandidate candidate = new IceCandidate(
                         payload.getString("id"),
